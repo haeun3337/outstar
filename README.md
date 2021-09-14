@@ -1,5 +1,3 @@
-#outstar
-
 outstar
 
 과제 주제 : 개선된 SNS 앱
