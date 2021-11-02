@@ -1,0 +1,123 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> 교수 회원가입 </title> 
+<link rel="stylesheet" th:href="@{/css/sJoinStyle.css}" type="text/css">
+<!-- 
+	<script type="text/javascript"  th:href="@{/javascript/join.js}"></script>
+ -->
+</head>
+<body>
+<form method="post" th:action="@{/board/p_join}">
+<center>
+<form>
+<table>
+<caption>
+<img src="/images/joinus.jpg">
+</caption>
+<tr>
+	<td>
+		<strong>사번</strong>
+		</span>
+		<img src="/images/star.png" height="10px" width="10px"> 
+	</td>
+	<td><input type="id" name="professorNum" maxlength="15" method="post">
+	<!-- 
+	<input type="button" value="중복확인" onclick="formCheck(this.form)">
+	 -->
+	</td>
+</tr>
+<tr>
+	<td>
+		<strong>비밀번호</strong>
+		<img src="/images/star.png" height="10px" width="10px"> 
+
+	</td>
+	<td>
+	    <input type = "password" name="professorPw" value="" maxlength="15" method="post">		
+            <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+            10~16자리</span>로 입력이 가능합니다.</p>
+ 	</td>
+</tr>
+<tr>
+ 	<td>
+ 		<strong>비밀번호 확인</strong>
+ 		<img src="/images/star.png" height="10px" width="10px">
+ 	</td>
+ 	<td>
+	    <input type = "password" id="professorPw"value="" maxlength="15">
+	</td>
+</tr>
+<tr>
+	<td>
+		<strong>이름</strong>
+		<img src="/images/star.png" height="10px" width="10px"/>
+	</td>
+	<td>
+		<input type = "text" name ="professorName" method="post">
+	</td>
+</tr>
+<tr>
+	<td>
+			<strong>E-mail</strong>
+			<img src="/images/star.png" height="10px" width="10px"/>
+	</td>
+	<td>
+		<input type="text" name="professorEmail" method="post">
+	</td>
+	<!-- 
+	<td>
+		<input type="text" name="email_1">
+		<span>@</span>
+		<input type="text" name="email_2">
+			<select name="email_s">
+				<option value="gmail">gmail.com</option>
+				<option value="naver">naver.com</option>
+				<option value="hanmail">hanmail.net</option>
+				<option value="nate">nate.com</option>
+				<option value="daum">daum.net</option>
+				<option value="self">직접입력</option>
+			</select>
+	</td>	
+	 -->	
+</tr>
+<tr>
+	<td>
+			<strong>학과</strong>
+			<img src="/images/star.png" height="10px" width="10px"/>
+	</td>
+	<td>
+			<select name="majorcourse.majorCode" method="post">
+				<option>필수선택</option>
+				<option value=2 method="post">컴퓨터공학과</option>
+				<option value=3 method="post">화학공학과</option>
+				<option value=4 method="post">물리학과</option>
+				<option value=5 method="post">전자공학과</option>
+			</select>
+	</td>
+</tr>
+<!-- 
+<tr>
+	<td>
+		<strong>메일수신동의</strong>
+	</td>
+
+	<td>
+		<form>
+			<input type="radio" name="mail" value="수신"/> 수신
+			<input type="radio" name="mail" value="수신거부"/> 수신거부
+		</form>
+	</td>
+</tr>
+ -->
+</table>
+<br><br>
+<div>
+<input class="but3" type="submit" value="회원가입" onclick="formCheck(this.form)" th:href="@{/board/p_join}">
+<input class="but4" type="button" value="취소" onclick="" th:href="@{/board/s_login}">
+</div>
+</form>
+</center>
+
+<body>
+</html>

@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> 학생 로그인 </title> 
+    <link rel="stylesheet" th:href="@{/css/sLoginStyle.css}">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h3>
+                <a th:href="@{/}">강의평가</a>
+            </h3>
+            <div>
+                <a th:href="@{/board/p_login}">교수 로그인</a>
+                <a th:href="@{/board/s_join}">학생 회원가입</a>
+            </div>
+        </header>
+        <main>
+            <form th:action="@{/board/s_login}" method="post" class="s_wrap">
+                <h3>학생 로그인</h3>
+                <input type="text" id="id" name="studentNum" placeholder="학번" method="post">
+                <input type="password" id="pw" name="studentPw" placeholder="비밀번호" method="post">
+                <button type="submit" method="post">로그인</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
