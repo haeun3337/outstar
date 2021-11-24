@@ -1,0 +1,427 @@
+/* 초기화 */
+*{
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none; 
+	color: #333;
+}
+li , ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+}
+
+
+/* 헤더 */
+header {
+	height: 80px; 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center; 
+	padding: 0 50px; 
+	width: 100%; 
+	border-bottom: 1px solid #ccc;
+	font-weight:bold;
+}
+header h3 a {
+	font-size : 40px;
+	text-decoration: none; 
+	display: flex;
+	align-items: center;
+	color:black;
+}
+
+header h3 img{
+	margin-right: 10px;
+}
+
+header div {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+header div.login > a {
+	width: 150px; 
+	display: block; 
+	height: 50px; 
+	line-height: 50px; 
+	text-align: center; 
+	background-color: #333; 
+	color: #fff; 
+	margin: 0 10px;
+}
+
+/* 메인 */
+main {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+main .con1 {
+	width: 25%; 
+	height: auto; 
+	min-height: 900px; 
+	border-right: 1px solid #ccc; 
+	padding: 20px;
+}
+main .con2 {
+	width: 75%; 
+	height: auto; 
+	min-height: 900px;
+}
+main .con1 ul {
+	margin-bottom: 50px; 
+	border-bottom: 1px solid #ccc;
+}
+main .con1 ul li {
+	line-height: 50px; 
+	width: 100%; 
+	border-bottom: 1px dotted #333; 
+	font-size: 18px; 
+	padding-left: 20px;
+}
+main .con1 ul li:last-child{
+	border-bottom: 0;
+}
+
+/* con1에 있는 제목 */
+main .con1 .title {
+	width: 100%; 
+	font-size: 28px; 
+	font-weight: bold;
+	padding-left: 20px; 
+	line-height: 60px; 
+	border-top: 3px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+main .con1 li a {
+	font-weight: bold;
+}
+
+/* 검색 */
+main .con2 {
+	padding: 0 150px;
+}
+main .con2 ul {
+	background-color:black;
+	list-style:disc;
+	border-top:1px solid gray;
+	border-bottom:1px solid white;
+	font-size : 20px;
+	text-align:center;
+}
+main .con2 ul li {	
+	display:inline;
+	letter-spacing:.8em;
+	margin-left:2em;
+}
+main .con2 ul li a {
+	text-decoration:none;
+	color:white;
+	line-height:3em;
+	text-transform:uppercase;
+}
+
+/* 게시판 */
+main .con2 table {
+	width: 100%; 
+	margin-top: 50px; 
+	border-top: 2px solid #333;
+}
+main .con2 table tr {
+	border-bottom: 1px solid #ccc; 
+	width: 100%; 
+	height: 60px;
+}
+main .con2 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2 table td {
+	text-align: center; 
+	border-bottom: 1px solid #ccc; 
+	cursor: pointer;
+}
+
+main .con2 table tbody tr td:nth-child(2) {
+	text-align: left; 
+	padding-left: 30px;
+}
+
+/* form포함 페이지 디자인 */
+.s_wrap {
+	max-width: 500px; 
+	margin: 250px auto;
+}
+.s_wrap h3 {
+	text-align: center; 
+	margin-bottom: 50px; 
+	font-size: 52px;
+}
+.s_wrap input {
+	width: 100%; 
+	height: 50px; 
+	padding: 0 10px; 
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+.s_wrap button {
+	font-size: 18px; 
+	border: 0; 
+	cursor: pointer; 
+	width: 100%; 
+	line-height: 50px; 
+	height: 50px; 
+	background-color: #333; 
+	color: #fff; 
+	text-align: center;
+}
+
+/* data.html */
+
+main .title2 {
+	width: 100%;
+	border-bottom: 5px solid #333;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+main .title2 button{
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	display: block;
+	background-color: #333;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+
+main .con2_2 {
+	width: 75%; 
+	height: auto; 
+	min-height: 900px;
+}
+
+main .con2_2 {
+	padding: 0 150px;
+}
+main .con2_2 ul {
+	background-color:black;
+	list-style:disc;
+	border-top:1px solid gray;
+	border-bottom:1px solid white;
+	font-size : 20px;
+	text-align:center;
+}
+
+main .con2_2 .search {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+main .con2_2 .search span{
+	margin-left: 20px;
+}
+main .con2_2 .search select{
+	margin-right: 20px;
+}
+
+main .con2_2 .search button {
+	border: 1px solid #ccc;
+	padding: 7px 15px;
+	background-color: #333;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+main .con2_2 ul li {	
+	display:inline;
+	letter-spacing:.8em;
+	margin-left:2em;
+}
+main .con2_2 ul li a {
+	text-decoration:none;
+	color:white;
+	line-height:3em;
+	text-transform:uppercase;
+}
+
+
+main .con2_2 table {
+	width: 100%; 
+	border-top: 2px solid #333;
+}
+main .con2_2 table tr {
+	border-bottom: 1px solid #ccc; 
+	width: 100%; 
+	height: 60px;
+}
+main .con2_2 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2_2 table td {
+	text-align: center; 
+	border-bottom: 1px solid #ccc; 
+	cursor: pointer;
+}
+
+main .con2_2 table tbody tr td:nth-child(3) {
+	text-align: left; 
+	padding-left: 30px;
+}
+
+
+/* share_book.html */
+
+main .con2_3 {
+	width: 75%; 
+	height: auto; 
+	min-height: 900px;
+}
+
+main .con2_3 {
+	padding: 0 150px;
+}
+main .con2_3 ul {
+	background-color:black;
+	list-style:disc;
+	border-top:1px solid gray;
+	border-bottom:1px solid white;
+	font-size : 20px;
+	text-align:center;
+}
+
+main .con2_3 form {
+	width: 100%;
+}
+
+main .con2_3 .search2 form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+}
+
+main .con2_3 .search2 input{
+	width: 80%;
+	margin-right: 10px;
+	height: 40px;
+	border: 3px solid #333;
+	font-size: 18px;
+	padding-left: 10px;
+}
+main .con2_3 .search2 select{
+	margin-right: 20px;
+}
+
+main .con2_3 .search2 button {
+	border: 1px solid #ccc;
+	padding: 7px 15px;
+	background-color: #333;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+main .con2_3 ul li {	
+	display:inline;
+	letter-spacing:.8em;
+	margin-left:2em;
+}
+main .con2_3 ul li a {
+	text-decoration:none;
+	color:white;
+	line-height:3em;
+	text-transform:uppercase;
+}
+
+
+main .con2_3 table {
+	width: 100%; 
+	border-top: 2px solid #333;
+}
+main .con2_3 table tr {
+	border-bottom: 1px solid #ccc; 
+	width: 100%; 
+	height: 60px;
+}
+main .con2_3 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2_3 table td {
+	text-align: center; 
+	border-bottom: 1px solid #ccc; 
+	cursor: pointer;
+}
+
+main .con2_3 table tbody tr td:nth-child(2) {
+	text-align: left; 
+	padding-left: 30px;
+}
+
+.book form {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.book form span {margin: 10px;}
+
+.book form input, select {
+	height: 30px;
+}
+
+.book form #name {
+	width: 80%;
+}
+
+.book form textarea {
+	width: 90%;
+	font-size: 32px;
+	margin-left: 10px;
+	height: 300px;
+	padding: 10px;
+}
+
+.book form button {
+	width: 90%;
+	height: 50px;
+	background-color: #333;
+	text-align: center;
+	border: 1px solid #333;
+	color: #fff;
+	text-align: center;
+	font-size: 22px;
+	margin: 20px 10px;
+	cursor: pointer;
+}
+
+
+
+
+
+

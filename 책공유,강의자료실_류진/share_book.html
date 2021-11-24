@@ -1,0 +1,116 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+</head>
+<style>
+/* #update{
+	width: 100px; 
+	display: block; 
+	height: 50px; 
+	line-height: 50px; 
+	text-align: center; 
+	background-color: #444; 
+	color: #fff; 
+	margin: 0 10px;
+} */
+</style>
+<body>
+	<div id="wrap">
+        <header>
+            <h3>
+                <a href="#">
+                    <img src = "./images/mmu.png" alt="mmu" width="50" height="50">    
+                    MMU 족보닷컴
+                </a>
+            </h3>
+            <div class="login">
+                <a href="/board/p_login">교수 로그인</a>
+                <a href="/board/s_login">학생 로그인</a>
+            </div>
+        </header>
+        <main>
+            <div class="con1">
+                <div class="title">회원 정보</div>
+                <ul class="user">
+                    <li>이름</li>
+                    <li>학번</li>
+                    <li><a id="update" href="/board/s_login">회원정보수정</a></li>
+                </ul>
+                <div class="title">메뉴</div>
+                <ul class="subject">
+                    <li><a href="review.html">강의 후기</a></li>
+                    <li><a href="share_book.html">책 공유</a></li>
+                    <li><a href="data.html">강의 자료실</a></li>
+                </ul>
+            </div>
+            <div class="con2_3">
+                <div class="title2">
+                    <p>책 공유</p>
+                    <button onclick="location.href='./up_book.html'">글쓰기</button>
+                </div>
+                <div class="search2">
+                    <form action="" method="post">
+                        <input type="text" name="search">
+                        <button type="submit">검색</button>
+                    </form>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>과목명</th>
+                            <th>책이름</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>컴퓨터</td>
+                            <td>컴퓨터 활용능력 2급</td>
+                            <td>이름</td>
+                            <td>2021-10-31</td>
+                        </tr>
+                        <tr>
+                            <td>컴퓨터</td>
+                            <td>컴퓨터 활용능력 2급</td>
+                            <td>이름</td>
+                            <td>2021-10-31</td>
+                        </tr>
+                        <tr>
+                            <td>컴퓨터</td>
+                            <td>컴퓨터 활용능력 2급</td>
+                            <td>이름</td>
+                            <td>2021-10-31</td>
+                        </tr>
+                        <tr>
+                            <td>컴퓨터</td>
+                            <td>컴퓨터 활용능력 2급</td>
+                            <td>이름</td>
+                            <td>2021-10-31</td>
+                        </tr>
+                        <tr>
+                            <td>컴퓨터</td>
+                            <td>컴퓨터 활용능력 2급</td>
+                            <td>이름</td>
+                            <td>2021-10-31</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
