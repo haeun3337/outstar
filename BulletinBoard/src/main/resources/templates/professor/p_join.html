@@ -1,14 +1,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title> 학생 회원가입 </title> 
+<title> 교수 회원가입 </title> 
 <link rel="stylesheet" th:href="@{/css/sJoinStyle.css}" type="text/css">
 <!-- 
 	<script type="text/javascript"  th:href="@{/javascript/join.js}"></script>
  -->
 </head>
 <body>
-<form method="post" th:action="@{/board/s_join}">
+<form method="post" th:action="@{/board/p_join}">
 <center>
 <form>
 <table>
@@ -17,11 +17,11 @@
 </caption>
 <tr>
 	<td>
-		<strong>학번</strong>
+		<strong>사번</strong>
 		</span>
 		<img src="/images/star.png" height="10px" width="10px"> 
 	</td>
-	<td><input type="id" name="studentNum" maxlength="15" method="post">
+	<td><input type="id" name="professorNum" maxlength="15" method="post">
 	<!-- 
 	<input type="button" value="중복확인" onclick="formCheck(this.form)">
 	 -->
@@ -34,7 +34,7 @@
 
 	</td>
 	<td>
-	    <input type = "password" name="studentPw" value="" maxlength="15" method="post">		
+	    <input type = "password" name="professorPw" value="" maxlength="15" method="post">		
             <p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
             10~16자리</span>로 입력이 가능합니다.</p>
  	</td>
@@ -45,7 +45,7 @@
  		<img src="/images/star.png" height="10px" width="10px">
  	</td>
  	<td>
-	    <input type = "password" id="pwd2"value="" maxlength="15">
+	    <input type = "password" id="professorPw"value="" maxlength="15">
 	</td>
 </tr>
 <tr>
@@ -54,7 +54,7 @@
 		<img src="/images/star.png" height="10px" width="10px"/>
 	</td>
 	<td>
-		<input type = "text" name ="studentName" method="post">
+		<input type = "text" name ="professorName" method="post">
 	</td>
 </tr>
 <tr>
@@ -63,7 +63,7 @@
 			<img src="/images/star.png" height="10px" width="10px"/>
 	</td>
 	<td>
-		<input type="text" name="studentEmail" method="post">
+		<input type="text" name="professorEmail" method="post">
 	</td>
 	<!-- 
 	<td>
@@ -89,10 +89,12 @@
 	<td>
 			<select name="majorcourse.majorCode" method="post">
 				<option>필수선택</option>
-				<option value=1 method="post">컴퓨터공학과</option>
-				<option value=2 method="post">환경생명공학과</option>
+				<option value=2 method="post">컴퓨터공학과</option>
+				<option value=3 method="post">화학공학과</option>
+				<option value=4 method="post">물리학과</option>
+				<option value=5 method="post">전자공학과</option>
 			</select>
-	</td>	
+	</td>
 </tr>
 <!-- 
 <tr>
@@ -111,7 +113,7 @@
 </table>
 <br><br>
 <div>
-<input class="but3" type="submit" value="회원가입" onclick="formCheck(this.form)" th:href="@{/board/s_login}">
+<input class="but3" type="submit" value="회원가입" onclick="formCheck(this.form)" th:href="@{/board/p_join}">
 <input class="but4" type="button" value="취소" onclick="" th:href="@{/board/s_login}">
 </div>
 </form>

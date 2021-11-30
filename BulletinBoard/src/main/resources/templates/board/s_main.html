@@ -1,5 +1,4 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,13 +19,16 @@
 }
 </style>
 <body>
+<form th:action="@{/board/s_main}" method="post">
 	<div id="wrap">
         <header>
             <h3>
-				<img src = "/images/mmu.png" alt="mmu" width="50" height="50">
-                <a> MMU 족보닷컴</a>
+            <a href="/board/s_main">
+          		<img src = "/images/mmu.png" alt="mmu" width="50" height="50">    
+                MMU 족보닷컴
+            </a>
             </h3>
-            <div>
+            <div class="login">
                 <a href="/">로그아웃</a>
             </div>
         </header>
@@ -38,6 +40,10 @@
                     <li th:text="${session.member.studentNum}"></li>
                     <a id="update" href="/board/s_update">회원정보수정</a>
                 </ul>
+                <!-- 
+                 <a id="update" th:href="@{/board/s_update(sid=${session.member.sid})}">회원정보수정</a>
+                 -->
+                
                 <div class="title">과</div>
                 <ul class="subject">
                     <li>과 명</li>
@@ -48,9 +54,9 @@
             <div class="con2">
                 <div id="">
 				<ul class="menu">
-					<li><a href="review.html">강의후기 |</a></li>
-					<li><a href="data.html">강의자료실 |</a></li>
-					<li><a href="share_book.html">책 공유</a></li>
+					<li><a href="/board/review">강의후기 |</a></li>
+					<li><a href="/board/data">강의자료실 |</a></li>
+					<li><a href="/board/share_book">책 공유</a></li>
 				</ul>
                 </div>
                 <table>
@@ -60,38 +66,16 @@
                             <th>제목</th>
                             <th>작성자</th>
                             <th>작성일</th>
+                            <th>조회수</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>안녕하세요!!</td>
-                            <td>이름</td>
-                            <td>2021-10-31</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>안녕하세요!!</td>
-                            <td>이름</td>
-                            <td>2021-10-31</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>안녕하세요!!</td>
-                            <td>이름</td>
-                            <td>2021-10-31</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>안녕하세요!!</td>
-                            <td>이름</td>
-                            <td>2021-10-31</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>안녕하세요!!</td>
-                            <td>이름</td>
-                            <td>2021-10-31</td>
+                        <tr th:each="sboard, state:${sboardList}">
+                            <td th:text="${state.count}" th:align="center">
+                            <td th:text="${sboard.title}">
+                            <td th:text="${sboard.member.studentName}">
+                            <td th:text="${#dates.format(sboard.createDate, 'yyyy-MM-dd')}">
+                            <td th:text="${sboard.cnt}">
                         </tr>
                     </tbody>
                 </table>
@@ -101,6 +85,6 @@
 
         </footer>
     </div>
-
+    </form>
 </body>
 </html>

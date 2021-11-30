@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,16 +23,18 @@ import lombok.ToString;
 @Entity
 public class Member {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long sid;//PK
-	
 	private String studentNum; //학번
+	
+	@Column(nullable = false)
 	private String studentPw;
+	@Column(nullable = false)
 	private String studentEmail;
+	@Column(nullable = false)
 	private String studentName;
+	
 	//board관련
 	@OneToMany(mappedBy="member", fetch=FetchType.EAGER)
-	private List<Board> boardList = new ArrayList<Board>();
+	private List<SBoard> sboardList = new ArrayList<SBoard>();
 	//전공코드FK
 	@NotNull
 	@ManyToOne

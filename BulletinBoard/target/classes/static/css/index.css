@@ -22,16 +22,23 @@ header {
 	display: flex; 
 	justify-content: space-between; 
 	align-items: center; 
-	padding: 0 50px; 
+	padding: 20px; 
 	width: 100%; 
 	border-bottom: 1px solid #ccc;
 	font-weight:bold;
 }
-header h3{
+header h3 a {
 	font-size : 40px;
 	text-decoration: none; 
+	display: flex;
+	align-items: center;
 	color:black;
 }
+
+header h3 img{
+	margin-right: 10px;
+}
+
 header div {
 	display: flex; 
 	justify-content: center; 
@@ -84,11 +91,16 @@ main .con1 ul li:last-child{
 /* con1에 있는 제목 */
 main .con1 .title {
 	width: 100%; 
-	font-size: 22px; 
+	font-size: 28px; 
 	font-weight: bold;
 	padding-left: 20px; 
 	line-height: 60px; 
-	border-bottom: 1px solid #ccc;
+	border-top: 3px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+main .con1 li a {
+	font-weight: bold;
 }
 
 /* 검색 */
@@ -126,11 +138,17 @@ main .con2 table tr {
 	width: 100%; 
 	height: 60px;
 }
-main .con2 table th , td {
+main .con2 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2 table td {
 	text-align: center; 
 	border-bottom: 1px solid #ccc; 
 	cursor: pointer;
 }
+
 main .con2 table tbody tr td:nth-child(2) {
 	text-align: left; 
 	padding-left: 30px;
@@ -164,4 +182,246 @@ main .con2 table tbody tr td:nth-child(2) {
 	color: #fff; 
 	text-align: center;
 }
+
+/* data.html */
+
+main .title2 {
+	width: 100%;
+	border-bottom: 5px solid #333;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+main .title2 button{
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	display: block;
+	background-color: #333;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+
+main .con2_2 {
+	width: 75%; 
+	height: auto; 
+	min-height: 900px;
+}
+
+main .con2_2 {
+	padding: 0 150px;
+}
+main .con2_2 ul {
+	background-color:black;
+	list-style:disc;
+	border-top:1px solid gray;
+	border-bottom:1px solid white;
+	font-size : 20px;
+	text-align:center;
+}
+
+main .con2_2 .search {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+main .con2_2 .search span{
+	margin-left: 20px;
+}
+main .con2_2 .search select{
+	margin-right: 20px;
+}
+
+main .con2_2 .search button {
+	border: 1px solid #ccc;
+	padding: 7px 15px;
+	background-color: #333;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+main .con2_2 ul li {	
+	display:inline;
+	letter-spacing:.8em;
+	margin-left:2em;
+}
+main .con2_2 ul li a {
+	text-decoration:none;
+	color:white;
+	line-height:3em;
+	text-transform:uppercase;
+}
+
+
+main .con2_2 table {
+	width: 100%; 
+	border-top: 2px solid #333;
+}
+main .con2_2 table tr {
+	border-bottom: 1px solid #ccc; 
+	width: 100%; 
+	height: 60px;
+}
+main .con2_2 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2_2 table td {
+	text-align: center; 
+	border-bottom: 1px solid #ccc; 
+	cursor: pointer;
+}
+
+main .con2_2 table tbody tr td:nth-child(3) {
+	text-align: left; 
+	padding-left: 30px;
+}
+
+
+/* share_book.html */
+
+main .con2_3 {
+	width: 75%; 
+	height: auto; 
+	min-height: 900px;
+}
+
+main .con2_3 {
+	padding: 0 150px;
+}
+main .con2_3 ul {
+	background-color:black;
+	list-style:disc;
+	border-top:1px solid gray;
+	border-bottom:1px solid white;
+	font-size : 20px;
+	text-align:center;
+}
+
+main .con2_3 form {
+	width: 100%;
+}
+
+main .con2_3 .search2 form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+}
+
+main .con2_3 .search2 input{
+	width: 80%;
+	margin-right: 10px;
+	height: 40px;
+	border: 3px solid #333;
+	font-size: 18px;
+	padding-left: 10px;
+}
+main .con2_3 .search2 select{
+	margin-right: 20px;
+}
+
+main .con2_3 .search2 button {
+	border: 1px solid #ccc;
+	padding: 7px 15px;
+	background-color: #333;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+main .con2_3 ul li {	
+	display:inline;
+	letter-spacing:.8em;
+	margin-left:2em;
+}
+main .con2_3 ul li a {
+	text-decoration:none;
+	color:white;
+	line-height:3em;
+	text-transform:uppercase;
+}
+
+
+main .con2_3 table {
+	width: 100%; 
+	border-top: 2px solid #333;
+}
+main .con2_3 table tr {
+	border-bottom: 1px solid #ccc; 
+	width: 100%; 
+	height: 60px;
+}
+main .con2_3 table th {
+	text-align: center; 
+	border-bottom: 1px solid #333; 
+	cursor: pointer;
+}
+main .con2_3 table td {
+	text-align: center; 
+	border-bottom: 1px solid #ccc; 
+	cursor: pointer;
+}
+
+main .con2_3 table tbody tr td:nth-child(2) {
+	text-align: left; 
+	padding-left: 30px;
+}
+
+.book form {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.book form span {margin: 10px;}
+
+.book form input, select {
+	height: 30px;
+}
+
+.book form #name {
+	width: 80%;
+}
+
+.book form textarea {
+	width: 90%;
+	font-size: 32px;
+	margin-left: 10px;
+	height: 300px;
+	padding: 10px;
+}
+
+.book form button {
+	width: 90%;
+	height: 50px;
+	background-color: #333;
+	text-align: center;
+	border: 1px solid #333;
+	color: #fff;
+	text-align: center;
+	font-size: 22px;
+	margin: 20px 10px;
+	cursor: pointer;
+}
+
+
+
+
+
 

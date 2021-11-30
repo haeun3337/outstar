@@ -1,4 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="/css/index.css" type="text/css">
 </head>
 <style>
-#update{
+/* #update{
 	width: 100px; 
 	display: block; 
 	height: 50px; 
@@ -16,17 +17,17 @@
 	background-color: #444; 
 	color: #fff; 
 	margin: 0 10px;
-}
+} */
 </style>
 <body>
-<form th:action="@{/board/s_main}" method="post">
+<form th:action="@{/board/share_book}" method="post">
 	<div id="wrap">
         <header>
             <h3>
-            <a href="/board/s_main">
-          		<img src = "/images/mmu.png" alt="mmu" width="50" height="50">    
-                MMU 족보닷컴
-            </a>
+                <a href="/board/s_main">
+                    <img src = "/images/mmu.png" alt="mmu" width="50" height="50">    
+                    MMU 족보닷컴
+                </a>
             </h3>
             <div class="login">
                 <a href="/">로그아웃</a>
@@ -40,33 +41,29 @@
                     <li th:text="${session.member.studentNum}"></li>
                     <a id="update" href="/board/s_update">회원정보수정</a>
                 </ul>
-                <!-- 
-                 <a id="update" th:href="@{/board/s_update(sid=${session.member.sid})}">회원정보수정</a>
-                 -->
-                
-                <div class="title">과</div>
+                <div class="title">페이지</div>
                 <ul class="subject">
-                    <li>과 명</li>
-                    <li>과 명</li>
-                    <li>과 명</li>
+                    <li><a id="update" href="/board/review">강의후기</a></li>
+                    <li><a id="update" href="/board/data">강의자료</a></li>
+                    <li><a id="update" href="/board/share_book">책공유</a></li>
                 </ul>
             </div>
-            <div class="con2">
-                <div id="">
-				<ul class="menu">
-					<li><a href="/board/review">강의후기 |</a></li>
-					<li><a href="/board/data">강의자료실 |</a></li>
-					<li><a href="/board/share_book">책 공유</a></li>
-				</ul>
+            <div class="con2_3">
+                <div class="title2">
+                    <p>책 공유</p>
+                    <a href="/board/up_book">글쓰기</a>
+                </div>
+                <div class="choice">
+                        <input type="text" name="search">
+                        <button type="submit">검색</button>
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th>번호</th>
-                            <th>제목</th>
+                            <th>과목명</th>
+                            <th>책이름</th>
                             <th>작성자</th>
                             <th>작성일</th>
-                            <th>조회수</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,8 +71,7 @@
                             <td th:text="${state.count}" th:align="center">
                             <td th:text="${sboard.title}">
                             <td th:text="${sboard.member.studentName}">
-                            <td th:text="${#dates.format(sboard.createDate, 'yyyy-MM-dd')}">
-                            <td th:text="${sboard.cnt}">
+                            <td th:text="${#dates.format(sboard.createDate, 'yyyy-MM-dd')}">                            
                         </tr>
                     </tbody>
                 </table>
@@ -85,6 +81,10 @@
 
         </footer>
     </div>
-    </form>
+
+    <script>
+        
+    </script>
+</form>
 </body>
 </html>

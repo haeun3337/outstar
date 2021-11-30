@@ -19,29 +19,27 @@
 	margin: 0 10px;
 }
 </style>
+
 <body>
 	<div id="wrap">
         <header>
             <h3>
-                <a href="#">
-                    <img src = "/images/mmu.png" alt="mmu" width="50" height="50">    
-                    MMU 족보닷컴
-                </a>
+				<img src = "/images/mmu.png" alt="mmu" width="50" height="50">
+                <a> MMU 족보닷컴</a>
             </h3>
-            <div class="login">
-                <a href="/board/p_login">교수 로그인</a>
-                <a href="/board/s_login">학생 로그인</a>
+            <div>
+                <a href="/">로그아웃</a>
             </div>
         </header>
         <main>
             <div class="con1">
                 <div class="title">회원 정보</div>
                 <ul class="user">
-                    <li>이름</li>
-                    <li>학번</li>
-                    <a id="update" href="/board/s_login">회원정보수정</a>
+                	<li th:text="${session.professor.professorName}"></li>
+                    <li th:text="${session.professor.professorNum}"></li>
+                    <a id="update" href="/board/p_update">회원정보수정</a>
                 </ul>
-                <div class="title">과</div>
+                <div class="title">담당과목</div>
                 <ul class="subject">
                     <li>과 명</li>
                     <li>과 명</li>

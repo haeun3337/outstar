@@ -1,5 +1,4 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,37 +8,30 @@
 </head>
 <body>
 <form method="post" th:action="@{/board/s_update}">
-<center>
-
-<table>
 <header>
 <h1><strong> 회원정보 수정 </strong></h1>
 </header>
+<table>
+<!-- 
 <tr>
+	<td><strong>학과</strong>	</td>
 	<td>
- 		
-		<strong>학번</strong>
-		</span>
-	</td>
-	<td><input class = "s_id" type="text" name="id" maxlength="15" readonly>
+	<input class = "s_id" type="text" name="majorcourse.major" th:value="${session.member.majorcourse.major}">
+	<input type="hidden" name="majorcourse.majorCode" th:value="${session.member.majorcourse.majorCode}">
+	
+	<p class = "s_id" th:name="studentNum" th:text="${session.member.majorcourse.major}"></p>
+	 
 	</td>
 </tr>
+ -->
 <tr>
+	<td><strong>학번</strong>	</td>
 	<td>
-		<strong>현재 비밀번호</strong>
-	</td>
-	<td>
-	    <input type = "password" name="pwd1" value="" maxlength="15">		
- 	</td>
-</tr>
-<tr>
- 	<td>
- 		<strong>변경할 비밀번호</strong>
- 	</td>
- 	<td>
-	    <input type = "password" id="pwd2"value="" maxlength="15">            
-		<p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
-            10~16자리</span>로 입력이 가능합니다.</p>
+	<input class = "s_id" type="text" name="studentNum" th:value="${session.member.studentNum}">
+	<input type="hidden" name="majorcourse.majorCode" th:value="${session.member.majorcourse.majorCode}">
+	<!-- 
+	<p class = "s_id" th:name="studentNum" th:text="${session.member.studentNum}"></p>
+	 -->
 	</td>
 </tr>
 <tr>
@@ -47,16 +39,32 @@
 		<strong>이름</strong>
 	</td>
 	<td>
-		<input class= "s_id"type = "text" name ="name">
+		<input class = "s_id" type="text" name ="studentName" th:value="${session.member.studentName}">
+		<!-- 
+		<p class = "s_id" th:name="studentName" th:text="${session.member.studentName}">
+		 -->
 	</td>
 </tr>
-
+<tr>
+	<td><strong>현재 비밀번호</strong></td>
+	<td><input type = "password" id="pwd1" th:value="${session.member.studentPw}" maxlength="15"></td>
+</tr>
+<tr>
+ 	<td>
+ 		<strong>변경할 비밀번호</strong>
+ 	</td>
+ 	<td>
+	    <input name="studentPw" type = "password" id="pwd2" th:value="${session.member.studentPw}" maxlength="15" >            
+		<p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+            10~16자리</span>로 입력이 가능합니다.</p>
+	</td>
+</tr>
 <tr>
 	<td>
 			<strong>E-mail</strong>
 	</td>
 	<td>
-		<input type="text" name="studentEmail">
+		<input type="text" name="studentEmail" th:value="${session.member.studentEmail}">
 		<!-- 
 		<span>@</span>
 		<input type="text" name="email_2">
@@ -77,21 +85,20 @@
 	</td>
 
 	<td>
-		<form>
+		
 			<input type="radio" name="mail" value="수신"/> 수신
 			<input type="radio" name="mail" value="수신거부"/> 수신거부
-		</form>
+		
 	</td>
 </tr>
 </table>
 <br><br>
 <div id = "btn_group">
-<input class="btn3" type="button" value="정보수정" onclick="formCheck(this.form)">
-<input class="btn4" type="button" value="취소" onclick="">
+<input class="btn3" type="submit" value="정보수정">
+<a class="btn4" th:href="@{/board/s_main}" style="text-decoration-line:none">메인페이지로 가기</a>
 </div>
 <input class="btn5" type="button" value="회원탈퇴" onclick="">
 
 </form>
-</center>
 </BODY> 
 </HTML>

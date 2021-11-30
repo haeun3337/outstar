@@ -1,5 +1,7 @@
 package com.example.demo.Controller;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -18,132 +20,85 @@ import com.example.demo.persistence.*;
 @Controller
 @RequestMapping(path="/board")
 public class MainController {
-	@Autowired
-	ProfessorRepository professorRepo;
+//	@Autowired
+//	ProfessorRepository professorRepo;
 	@Autowired
 	MemberRepository memberRepo;
+	@Autowired
+	SBoardRepository sboardRepo;
+	@Autowired
+	CategoryRepository cateRepo;
 	
-	//학생로그인
-	@GetMapping("/s_login")
-	public String sloginGet(){
-		return "/board/s_login";
-	}
-	@PostMapping("/s_login")
-    public String sloginPost(HttpSession session, String studentNum, String studentPw){
-		//String msg = alertmsg(studentNum, studentPw);
-		//model.addAttribute("msg", msg);
-		//model.addAttribute("check", 0);
-		//if (msg.equals("")) {			
-		Iterable<Member> memList = memberRepo.findAll();
-		for (Member m : memList) {
-			if (studentNum.equals(m.getStudentNum()) && studentPw.equals(m.getStudentPw())) {
-				//model.addAttribute(m);
-				session.setAttribute("member", m);
-				return "forward:/board/s_main";//로그인 사용자 정보 가지고 이동
-			}
-		}
-		//model.addAttribute("check", 1);
-		//model.addAttribute("msg", "아이디 또는 비밀번호가 틀렸습니다.");
-		return "/board/s_login";
-		//}
-		//check=1;
-		//model.addAttribute("empty_alert",empty_info);
-	}
-	
-	//교수로그인
-	@GetMapping("/p_login")
-	public String ploginGet(){
-		return "/board/p_login";
-	}
-	@PostMapping("/p_login")
-    public String ploginPost(HttpSession session, String  professorNum, String professorPw){		
-		Iterable<Professor> pList = professorRepo.findAll();
-		for (Professor p : pList) {
-			if (professorNum.equals(p.getProfessorNum()) && professorPw.equals(p.getProfessorPw())) {
-				session.setAttribute("professor", p);
-				return "forward:/board/p_main";//로그인 사용자 정보 가지고 이동
-			}
-		}
-		//model.addAttribute("check", 1);
-		//model.addAttribute("msg", "아이디 또는 비밀번호가 틀렸습니다.");
-		return "/board/p_login";
-    }
-	
-	//학생회원가입
-	@GetMapping("/s_join")
-	public String sjoinGet() {
-		return "/board/s_join";
-	}
-	@PostMapping("/s_join")
-	public String sjoinPost(Member m) {
-		memberRepo.save(m);
-		System.out.println("member DB에 저장완료");
-		return "redirect:s_login";//학생로그인페이지로 넘어가야함
-	}
-	
-	//교수회원가입
-	@GetMapping("/p_join")
-	public String pjoinGet() {
-		return "/board/p_join";
-	}
-	@PostMapping("/p_join")
-	public String pjoinPost(Professor p) {
-		professorRepo.save(p);
-		System.out.println("professor DB에 저장완료");
-		return "redirect:p_login";//교수로그인페이지로 넘어가야함
-	}
-	
-	//학생 메인페이지
-	@GetMapping("/s_main")
-	//public String mainGet(HttpServletRequest request, Model model) {
-	public String smainGet() {
-		//세션이 없으면 홈으로 이동
-//		HttpSession session = request.getSession(false);
-//		if(session == null) {
-//			return "/";
+	//강의후기페이지
+	@GetMapping("/review")
+	public String reviewGet(Model model) {
+		Iterable<SBoard> sboardList=sboardRepo.findAll();
+		model.addAttribute("sboardList", sboardList);
+//		for(SBoard sboard:sboardList) {
+//			System.out.println(sboard.toString());
 //		}
-			//세션에 저장된 회원 조회
-			//Member loginingMember =(Member)session.getAttribute(SessionConstants.LOGIN_MEMBER);
-			//model.addAttribute("member", m);		
-		return "/board/s_main";
+		return "/board/review";
 	}
-	@PostMapping("/s_main")
-	public String smainPost(HttpSession session) {
-		//model.addAttribute("member", m);
-		//return "forward:/board/main";
-		return "/board/s_main";
+	@PostMapping("/review")
+	public String reviewPost() {
+		return "/board/review";
 	}
-	
-	//교수 메인페이지
-	@GetMapping("/p_main")
-	//public String mainGet(HttpServletRequest request, Model model) {
-	public String pmainGet() {
-		return "/board/p_main";
+//	@RequestMapping("/review")
+//	public String getReview(Model model, SBoard sboard) {
+//		<SBoard> sboardList=
+//		return "/board/review";
+//	}
+	//강의자료페이지
+	@GetMapping("/data")
+	public String dataGet(Model model) {
+		Iterable<SBoard> sboardList=sboardRepo.findAll();
+		model.addAttribute("sboardList", sboardList);
+		return "/board/data";
 	}
-	@PostMapping("/p_main")
-	public String pmainPost(HttpSession session) {
-		//model.addAttribute("member", m);
-		//return "forward:/board/main";
-		return "/board/p_main";
+	@PostMapping("/data")
+	public String dataPost() {
+		return "/board/data";
 	}
-		
-	//학생정보수정페이지
-	@GetMapping("/s_update")
-	public String supdateGet() {
-		return "/board/s_update";
+	//강의자료글쓰기
+	@GetMapping("/up_data")
+	public String updataGet() {
+		return "/board/up_data";
 	}
-	@PostMapping("/s_update")
-	public String supdatePost() {
-		return "/board/s_update";//교수로그인페이지로 넘어가야함
+	@PostMapping("/up_data")
+	public String updataPost() {
+		return "/board/up_data";
 	}
-	
-	//교수정보수정페이지
-	@GetMapping("/p_update")
-	public String pupdateGet() {
-		return "/board/p_update";
+	//책공유페이지
+	@GetMapping("/share_book")
+	public String shareGet(Model model) {
+//		Category cate=cateRepo.findByCategoryName("책공유");
+//		model.addAttribute("sboardList", cate.getSboardList());
+		//Iterable<SBoard> sboardList=sboardRepo.findByCategoryName("책공유");
+		//Iterable<SBoard> sboardList=sboardRepo.findAll();
+		Iterable<SBoard> sboardList=sboardRepo.findAll();
+		model.addAttribute("sboardList", sboardList);
+		return "/board/share_book";
 	}
-	@PostMapping("/p_update")
-	public String pupdatePost() {
-		return "/board/p_update";//교수로그인페이지로 넘어가야함
+	@PostMapping("/share_book")
+	public String sharePost() {
+		return "/board/share_book";
+	}
+	//책공유글쓰기
+	@GetMapping("/up_book")
+	public String upbookGet() {
+		return "/board/up_book";
+	}
+	@PostMapping("/up_book")
+	public String upbookPost() {
+		return "/board/up_book";
+	}
+	//후기글쓰기
+	@GetMapping("/up_review")
+	public String upreviewGet() {
+		return "/board/up_review";
+	}
+	@PostMapping("/up_review")
+	public String upreviewPost() {
+		return "/board/up_review";
 	}
 }

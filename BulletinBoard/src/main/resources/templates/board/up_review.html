@@ -1,0 +1,107 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>글작성</title>
+	<link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h3>
+				<a href="/board/s_main">
+					<img src = "/images/mmu.png" alt="mmu" width="50" height="50">
+                 
+					MMU 족보닷컴
+				</a>
+            </h3>
+            <div>
+                <a href="/">로그아웃</a>
+            </div>
+        </header>
+
+	<main>
+		<div class="con1">
+                <div class="title">회원 정보</div>
+                <ul class="user">
+                	<li th:text="${session.member.studentName}">이름</li>
+                    <li th:text="${session.member.studentNum}">학번</li>
+                    <li><a id="update" href="/board/s_update">회원정보수정</a></li>
+                </ul>
+                <div class="title">메뉴</div>
+                <ul class="subject">
+                    <li><a href="review.html">강의 후기</a></li>
+                    <li><a href="share_book.html">책 공유</a></li>
+                    <li><a href="data.html">강의 자료실</a></li>
+                </ul>
+            </div>
+			<div class="con2_3">
+                <div class="title2">
+                    <p>강의 후기</p>
+                </div>
+                <div class="book">
+                    <form th:action="@{/board/up_review}" method="post">
+                        <br>
+                        <span>과목명</span>
+                        <select name="" id="">
+                            <option value="1">소프트웨어공학</option>
+							<option value="1">JAVA응용및실습 </option>
+							<option value="1">컴퓨터 네트워크 </option>
+							<option value="1">데이터베이스응용및설계 </option>
+							<option value="1">임베디드응용설계 </option>
+							<option value="1">캡스톤디자인</option>
+							<option value="1">객체지향모델링 </option>
+							<option value="1">전력ICT특강 </option>
+							<option value="1">프로그래밍언어론 </option>
+							<option value="1">확률과통계 </option>
+							<option value="1">선형대수학 </option>
+							<option value="1">UNIX </option>
+							<option value="1">마이크로프로세서 </option>
+							<option value="1">전공영어 </option>
+							<option value="1">웹프로그래밍및실습 </option>
+							<option value="1">C언어및실습 </option>
+                        </select>
+                        <br>
+                        <br>
+                        <span>교수명</span>
+                        <input type="text" name="name" id="name">
+                        <br>
+                        <br>
+                        <span>첨부파일</span>
+                        <input type="file" name="file">
+                        <br>
+                        <br>
+                        <textarea name="text" id="text" cols="30" rows="10" placeholder="강의 내용"></textarea>
+
+                        <button type="submit">업로드</button>
+		<!-- <section id="board_write"> -->
+		<!-- <br><br> -->
+			<!-- <div class="write"> -->
+				<!-- <ul class="w"> -->
+					<!-- <li><a href="write.html">글쓰기</a></li> -->
+				<!-- </ul> -->
+			<!-- </div> -->
+ 				<!-- <div id="write_area"> -->
+					<!-- <form enctype="multipart/form-data" action="write_ok.php?board_id=<?echo $board_id;?>" method="post"> -->
+						<!-- <div id="in_title"> -->
+							<!-- <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목을 입력하세요." maxlength="100" required></textarea> -->
+						<!-- </div> -->
+						<!-- <br> -->
+						<!-- <div id="in_content"> -->
+							<!-- <textarea name="content" id="ucontent" rows="10" cols="55" placeholder="내용을 입력하세요." required></textarea> -->
+						<!-- </div> -->
+ 
+						<!-- <input type="file" name="SelectFile" /> -->
+						<!-- <br><br> -->
+						<!-- <div class="bt_se"> -->
+							<!-- <button type="submit">글 작성</button> -->
+							<!-- <button type="reset"><a href="review.html">취소</a></button> -->
+						<!-- </div> -->
+					</form>
+				</div>
+			</section>
+		</main>
+    </body>
+</html>

@@ -21,7 +21,7 @@ import lombok.ToString;
 public class MajorCourse {//전공entity
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long majorCode; //전공코드
+	private Integer majorCode; //전공코드
 	private String major; //전공학과
 	/*
 	@OneToMany(mappedBy="member", fetch=FetchType.EAGER)

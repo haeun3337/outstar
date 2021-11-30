@@ -1,0 +1,95 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교수 정보 수정</title>
+    <link rel="stylesheet" href="/css/update.css" type="text/css">
+</head>
+<body>
+<form method="post" th:action="@{/board/p_update}">
+<center>
+<table>
+<header>
+<h1><strong> 회원정보 수정 </strong></h1>
+</header>
+<tr>
+	<td>
+ 		
+		<strong>학번</strong>
+		</span>
+	</td>
+	<td><input class = "s_id" type="text" name="id" maxlength="15" readonly>
+	</td>
+</tr>
+<tr>
+	<td>
+		<strong>현재 비밀번호</strong>
+	</td>
+	<td>
+	    <input type = "password" name="pwd1" value="" maxlength="15">		
+
+ 	</td>
+</tr>
+<tr>
+ 	<td>
+ 		<strong>변경할 비밀번호</strong>
+ 	</td>
+ 	<td>
+	    <input type = "password" id="pwd2"value="" maxlength="15">            
+		<p>※비밀번호는 <span class="num">문자, 숫자, 특수문자(~!@#$%^&*)의 조합
+            10~16자리</span>로 입력이 가능합니다.</p>
+	</td>
+</tr>
+<tr>
+	<td>
+		<strong>이름</strong>
+	</td>
+	<td>
+		<input class= "s_id"type = "text" name ="name">
+	</td>
+</tr>
+
+<tr>
+	<td>
+			<strong>E-mail</strong>
+	</td>
+	<td>
+		<input type="text" name="email_1">
+		<!-- 
+		<span>@</span>
+		<input type="text" name="email_2">
+			<select name="email_s">
+				<option value="gmail">gmail.com</option>
+				<option value="naver">naver.com</option>
+				<option value="hanmail">hanmail.net</option>
+				<option value="nate">nate.com</option>
+				<option value="daum">daum.net</option>
+				<option value="self">직접입력</option>
+			</select>
+		 -->
+	</td>		
+</tr>
+<tr>
+	<td>
+		<strong>메일수신동의</strong>
+	</td>
+
+	<td>
+			<input type="radio" name="mail" value="수신"/> 수신
+			<input type="radio" name="mail" value="수신거부"/> 수신거부
+		
+	</td>
+</tr>
+</table>
+<br><br>
+<div id = "btn_group">
+<input class="btn3" type="submit" value="정보수정" onclick="formCheck(this.form)">
+<input class="btn4" type="button" value="취소" onclick="">
+</div>
+<input class="btn5" type="button" value="회원탈퇴" onclick="">
+
+</form>
+</body> 
+</html>
